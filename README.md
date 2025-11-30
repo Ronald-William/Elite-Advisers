@@ -1,4 +1,4 @@
-# AuditLabs
+# Elite-Advisers
 
 <div align="center">
 
@@ -20,7 +20,7 @@
 
 ## 📋 Overview
 
-AuditLabs is a comprehensive GST invoicing and taxation platform built to streamline financial operations for businesses. With an intuitive interface and powerful automation features, AuditLabs simplifies complex tax calculations, invoice generation, and audit trail management.
+EliteAdviser is a comprehensive GST invoicing and taxation platform built to streamline financial operations for businesses. With an intuitive interface and powerful automation features, AuditLabs simplifies complex tax calculations, invoice generation, and audit trail management.
 
 ## ✨ Features
 
