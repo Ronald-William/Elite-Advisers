@@ -3,6 +3,7 @@ import { ChevronRight, FileText, Calculator, Users, Award, Phone, Mail, MapPin, 
 import Navbar from '../component/navbar'
 import ContactForm from '../component/contactForm';
 import { ScrollReveal, BlockReveal, TextReveal } from "../component/ScrollReveal"
+import {Link} from 'react-router-dom';
 export default function Landing() {
 
     const services = [
@@ -57,7 +58,7 @@ return (
             {/* Content */}
             <div className="relative z-10 text-center max-w-4xl">
                 <div className="inline-block mb-6">
-                    <span className="bg-[#1A3D64] text-white px-6 py-2 rounded-full text-sm font-semibold">
+                    <span className="bg-[#0C2B4E] text-white px-6 py-2 rounded-full text-sm font-semibold">
                         Trusted Financial Partners Since 2018
                     </span>
                 </div>
@@ -74,7 +75,7 @@ return (
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center">
-                    <button className="bg-gradient-to-r from-[#1D546C] to-[#0C2B4E] text-white px-10 py-4 rounded-xl shadow-black shadow-lg hover:shadow-2xl hover:shadow-white transition transform hover:scale-105 flex items-center justify-center text-lg font-semibold">
+                    <button className="bg-gradient-to-r bg-[#0C2B4E] text-white px-10 py-4 rounded-xl shadow-black shadow-lg hover:shadow-2xl hover:shadow-white transition transform hover:scale-105 flex items-center justify-center text-lg font-semibold">
                         Schedule Consultation
                         <ChevronRight className="ml-2 w-9 h-9" />
                     </button>
@@ -83,14 +84,14 @@ return (
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-24 px-4 sm:px-6 lg:px-8">
+<section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0C2B4E]">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <TextReveal text="WHAT WE OFFER" className="text-[#1D546C] font-semibold text-lg" />
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#0C2B4E] mt-2 mb-4">
+                    <TextReveal text="WHAT WE OFFER" className="text-white font-semibold text-lg" />
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mt-2 mb-4">
                         <TextReveal text="Our Services" delay={0.2} />
                     </h2>
-                    <div className="text-xl text-[#1D546C] max-w-2xl mx-auto">
+                    <div className="text-xl text-white max-w-2xl mx-auto">
                         <ScrollReveal delay={0.4}>
                             Comprehensive financial solutions tailored to your unique business needs
                         </ScrollReveal>
@@ -100,20 +101,15 @@ return (
                     {services.map((service, index) => (
                         <BlockReveal key={index} delay={index * 0.15}>
                             <div className="relative group">
-                                <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition rounded-3xl blur-xl -z-10"
-                                    style={{
-                                        background: `linear-gradient(to bottom right, #1A3D64, #1D546C)`
-                                    }}
-                                ></div>
-                                <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition h-full border-2 border-transparent group-hover:border-[#1A3D64]">
-                                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.color} text-white mb-6 group-hover:scale-110 transition`}>
+                                <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-[0_20px_80px_rgba(255,255,255,0.7)] transition-all duration-300 h-full border-2 border-transparent group-hover:border-white group-hover:border-4 group-hover:-translate-y-2 group-hover:scale-[1.02]">
+                                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
                                         {service.icon}
                                     </div>
                                     <h3 className="text-2xl font-bold text-[#0C2B4E] mb-3">{service.title}</h3>
                                     <p className="text-[#1D546C] text-lg leading-relaxed">{service.description}</p>
-                                    <button className="mt-6 text-[#1D546C] font-semibold flex items-center group-hover:text-[#0C2B4E] transition">
+                                    <button className="mt-6 text-[#1D546C] font-semibold flex items-center group-hover:text-[#0C2B4E] transition-colors duration-300">
                                         Learn More
-                                        <ChevronRight className="ml-1 w-5 h-5 group-hover:translate-x-1 transition" />
+                                        <ChevronRight className="ml-1 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                                     </button>
                                 </div>
                             </div>
@@ -129,7 +125,7 @@ return (
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                     <BlockReveal>
                         <div className="relative">
-                            <div className="absolute -top-6 -left-6 w-full h-full bg-gradient-to-br from-[#1A3D64] to-[#1D546C] rounded-3xl -z-10"></div>
+                            <div className="absolute -top-6 -left-6 w-full h-full bg-[#0C2B4E] rounded-3xl -z-10"></div>
                             <div className="bg-[#F4F4F4] p-10 rounded-3xl">
                                 <h2 className="text-3xl md:text-4xl font-bold text-[#0C2B4E] mb-6">
                                     <TextReveal text="Why Choose Us" />

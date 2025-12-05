@@ -31,7 +31,7 @@ export default function ContactForm() {
     <BlockReveal delay={0.2}>
       <form
         onSubmit={handleSubmit}
-        className="bg-gradient-to-br from-[#1D546C] to-[#0C2B4E] p-10 rounded-3xl shadow-2xl"
+        className="bg-[#0C2B4E] p-10 rounded-3xl shadow-2xl"
       >
         <h3 className="text-3xl font-bold text-white mb-6">
           <TextReveal text="Request a Callback" />

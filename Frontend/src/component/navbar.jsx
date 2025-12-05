@@ -1,6 +1,7 @@
 import logo from '../assets/logo.png'
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,22 +20,20 @@ const Navbar = () => {
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-5">
-                        <a
-                            href="#home"
-                            className="text-[#0C2B4E] hover:text-white hover:bg-[#0C2B4E] p-2 hover:rounded-xl font-medium transition-all duration-500 ease-in-out"
-                        >
-                            Home
-                        </a>
+                    <div className="hidden md:flex items-center space-x-4">
+                        <Link to="/">
+                            <div className="text-[#0C2B4E] hover:text-white hover:bg-[#0C2B4E] p-2 hover:rounded-xl font-medium transition-all duration-500 ease-in-out">Home
+                            </div>
+                        </Link>
 
                         {/* Dropdown Container */}
                         <div className="relative">
                             <button
                                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                                className="flex items-center gap-2 text-[#0C2B4E] hover:text-white hover:bg-[#0C2B4E] px-3 py-2 rounded-xl font-medium transition-all duration-500 ease-in-out"
+                                className="flex items-center gap-2 text-[#0C2B4E] hover:text-white hover:bg-[#0C2B4E] px-2 py-2 rounded-xl font-medium transition-all duration-500 ease-in-out"
                             >
                                 Services
-                                <span className={`transform transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""}`}>
+                                <span className={`transform transition-transform duration-300 text-xl${dropdownOpen ? "rotate-180" : ""}`}>
                                     ▾
                                 </span>
                             </button>
@@ -73,13 +72,9 @@ const Navbar = () => {
                             )}
                         </div>
 
-
-                        <a
-                            href="#about"
-                            className="text-[#0C2B4E] hover:text-white hover:bg-[#0C2B4E] p-2 hover:rounded-xl font-medium transition-all duration-500 ease-in-out"
-                        >
-                            About
-                        </a>
+                        <Link to="/about">
+                            <div className="text-[#0C2B4E] hover:text-white hover:bg-[#0C2B4E] p-2 hover:rounded-xl font-medium transition-all duration-500 ease-in-out">About</div>
+                        </Link>
                         <a
                             href="#contact"
                             className="text-[#0C2B4E] hover:text-white hover:bg-[#0C2B4E] p-2 hover:rounded-xl font-medium transition-all duration-500 ease-in-out"
@@ -106,8 +101,9 @@ const Navbar = () => {
             {mobileMenuOpen && (
                 <div className="md:hidden bg-white border-t-2 border-[#1A3D64]">
                     <div className="px-4 py-4 space-y-4">
-                        <a href="#home" className="block text-[#0C2B4E] hover:text-[#1D546C] font-medium">Home</a>
-
+                        <Link to="/">
+                            <div className="block text-[#0C2B4E] hover:text-[#1D546C] font-medium">Home</div>
+                        </Link>
                         {/* Mobile Dropdown */}
                         <div>
                             <button
@@ -127,7 +123,7 @@ const Navbar = () => {
                             )}
                         </div>
 
-                        <a href="#about" className="block text-[#0C2B4E] hover:text-[#1D546C] font-medium">About</a>
+                        <Link to="/about"><div className="block text-[#0C2B4E] hover:text-[#1D546C] font-medium">About</div></Link>
                         <a href="#contact" className="block text-[#0C2B4E] hover:text-[#1D546C] font-medium">Contact</a>
 
                         <button className="w-full bg-gradient-to-r from-[#1D546C] to-[#0C2B4E] text-white px-6 py-3 rounded-xl">
