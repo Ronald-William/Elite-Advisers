@@ -68,7 +68,7 @@ function Home() {
       return;
     }
     loadDashboard(token);
-    fetch("http://localhost:8080/admin/list")
+    fetch("https://adl-api-ten.vercel.app/admin/list")
       .then(res => res.json())
       .then(data => {
         if (data.success) setAdmins(data.admins || []);
@@ -78,7 +78,7 @@ function Home() {
 
   const loadDashboard = async (token) => {
     try {
-      const res = await fetch("http://localhost:8080/auth/dashboard", {
+      const res = await fetch("https://adl-api-ten.vercel.app/auth/dashboard", {
         headers: { Authorization: token },
       });
       const result = await res.json();
