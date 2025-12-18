@@ -69,7 +69,7 @@ function Login() {
           {/* Logo */}
           <div className="absolute top-10 left-12 z-20">
             <h1 className="text-6xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              AUDITLABS
+              Elite Advisers
             </h1>
             <p className="text-lg text-gray-300 mt-1">Practice Management Platform</p>
           </div>
