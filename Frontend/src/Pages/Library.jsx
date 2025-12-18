@@ -13,7 +13,7 @@ function Library() {
   const loadData = async (query = "", tagFilter = "") => {
     try {
       setLoading(true);
-      const res = await fetch(`http://localhost:8080/library?q=${encodeURIComponent(query)}&tag=${encodeURIComponent(tagFilter)}`);
+      const res = await fetch(`https://adl-api-ten.vercel.app/library?q=${encodeURIComponent(query)}&tag=${encodeURIComponent(tagFilter)}`);
       const data = await res.json();
       if (data.success) {
         setItems(data.items || []);
