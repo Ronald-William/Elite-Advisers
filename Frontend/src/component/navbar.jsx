@@ -56,21 +56,20 @@ const Navbar = () => {
                                         
                                         Taxation & Return Filing
                                     </Link>
-                                    <a
-                                        href="#accounting"
+                                    <Link
+                                        to="/accounting"
                                         onClick={() => setDropdownOpen(false)}
                                         className="block px-3 py-2 text-[#0C2B4E] hover:bg-gray-100 rounded"
                                     >
-                                        
                                         Accounting & Bookkeeping
-                                    </a>
-                                    <a
-                                        href="#audit"
+                                    </Link>
+                                    <Link
+                                        to="/auditing"
                                         onClick={() => setDropdownOpen(false)}
                                         className="block px-3 py-2 text-[#0C2B4E] hover:bg-gray-100 rounded"
                                     >
                                         Audit & Assurance
-                                    </a>
+                                    </Link>
                                 </div>
                             )}
                         </div>
@@ -118,8 +117,8 @@ const Navbar = () => {
                                 <div className="ml-4 mt-2 space-y-2">
                                     <a href="#general" className="block text-[#0C2B4E] hover:text-[#1D546C]">General Consultancy</a>
                                     <a href="#taxation" className="block text-[#0C2B4E] hover:text-[#1D546C]">Taxation & Return Filing</a>
-                                    <a href="#accounting" className="block text-[#0C2B4E] hover:text-[#1D546C]">Accounting & Bookkeeping</a>
-                                    <a href="#audit" className="block text-[#0C2B4E] hover:text-[#1D546C]">Audit & Assurance</a>
+                                    <Link to="/accounting" className="block text-[#0C2B4E] hover:text-[#1D546C]">Accounting & Bookkeeping</Link>
+                                    <Link to="/auditing" className="block text-[#0C2B4E] hover:text-[#1D546C]">Audit & Assurance</Link>
                                 </div>
                             )}
                         </div>

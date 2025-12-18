@@ -415,7 +415,7 @@ function Home() {
                       {item.attachments?.length > 0 && (
                         <div className="flex flex-wrap gap-4">
                           {item.attachments.map((f, fi) => (
-                            <a key={fi} href={`http://localhost:8080${f.url}`} target="_blank" rel="noreferrer"
+                            <a key={fi} href={`https://adl-api-ten.vercel.app${f.url}`} target="_blank" rel="noreferrer"
                               className="inline-flex items-center gap-3 px-5 py-3 bg-blue-100 text-blue-700 rounded-2xl font-semibold hover:bg-blue-200 transition">
                               <Download className="w-5 h-5" /> {f.name}
                             </a>
@@ -427,11 +427,11 @@ function Home() {
                         <div className="flex items-center gap-6 pt-4">
                           <div className="flex items-center gap-4">
                             <span className="font-medium text-gray-700">Rate your experience:</span>
-                            <select
+                              <select
                               defaultValue={item.rating || ""}
                               onChange={async (e) => {
                                 const token = localStorage.getItem("token");
-                                const res = await fetch(`http://localhost:8080/auth/query/${item._id}/rate`, {
+                                const res = await fetch(`https://adl-api-ten.vercel.app/auth/query/${item._id}/rate`, {
                                   method: "POST",
                                   headers: { "Content-Type": "application/json", Authorization: token },
                                   body: JSON.stringify({ rating: Number(e.target.value) })
@@ -453,7 +453,7 @@ function Home() {
                           <button
                             onClick={async () => {
                               const token = localStorage.getItem("token");
-                              const res = await fetch(`http://localhost:8080/auth/query/${item._id}/reopen`, {
+                              const res = await fetch(`https://adl-api-ten.vercel.app/auth/query/${item._id}/reopen`, {
                                 method: "POST",
                                 headers: { Authorization: token }
                               });

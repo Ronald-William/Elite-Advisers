@@ -22,8 +22,8 @@ function App() {
     <div className="App">
       <Routes>
 
-        {/* Default → redirect to login */}
-        <Route path='/' element={<Navigate to="/Landing" />} />
+        {/* Default → redirect to landing */}
+        <Route path='/' element={<Navigate to="/landing" />} />
 
         <Route path='/landing' element={<Landing />} />
         <Route path='/about' element={<About />} />
