@@ -43,7 +43,7 @@ function Signup() {
 
     try {
       // 1. Register user
-      const res = await fetch("http://localhost:8080/auth/signup", {
+      const res = await fetch("https://adl-api-ten.vercel.app/auth/signup", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(signupInfo)
@@ -52,7 +52,7 @@ function Signup() {
       if (!result.success) return handleError(result.message || "Signup failed");
 
       // 2. Send OTP
-      const otpRes = await fetch("http://localhost:8080/api/otp/send-otp", {
+      const otpRes = await fetch("https://adl-api-ten.vercel.app/api/otp/send-otp", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: signupInfo.email, phone: signupInfo.phone })
@@ -75,7 +75,7 @@ function Signup() {
     if (otp.length !== 6) return handleError("Enter valid 6-digit OTP");
 
     try {
-      const res = await fetch("http://localhost:8080/api/otp/verify-otp", {
+      const res = await fetch("https://adl-api-ten.vercel.app/api/otp/verify-otp", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
