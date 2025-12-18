@@ -25,7 +25,7 @@ function EditProfile() {
 
   const loadProfile = async (token) => {
     try {
-      const res = await fetch("http://localhost:8080/auth/me", {
+      const res = await fetch("https://adl-api-ten.vercel.app/auth/me", {
         headers: { Authorization: token },
       });
       const result = await res.json();
@@ -58,7 +58,7 @@ function EditProfile() {
     if (!token) return handleError("Please login again");
 
     try {
-      const res = await fetch("http://localhost:8080/auth/profile", {
+      const res = await fetch("https://adl-api-ten.vercel.app/auth/profile", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
