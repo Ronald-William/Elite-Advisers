@@ -162,7 +162,7 @@ function Home() {
 
         {/* Premium Navbar */}
         <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-2xl border-b border-white/20 shadow-xl">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex items-center justify-between h-20">
 
               {/* Logo + Brand */}
@@ -170,7 +170,7 @@ function Home() {
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-2xl bg-white">
                   <img src="/src/assets/logo.png" alt="Elite Advisers" className="w-10 h-10 object-contain" />
                 </div>
-                <span className="brand-font text-3xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent tracking-widest">
+                <span className="brand-font text-2xl sm:text-3xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent tracking-widest">
                   Elite Advisers
                 </span>
               </div>
@@ -219,7 +219,7 @@ function Home() {
           {/* Mobile Menu */}
           {mobileMenuOpen && (
             <div className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-xl">
-              <div className="px-6 py-6 space-y-6">
+              <div className="px-4 sm:px-6 py-6 space-y-6">
                 <div className="flex items-center gap-4 pb-4 border-b border-gray-200">
                   <img
                     src={picture || `https://ui-avatars.com/api/?name=${encodeURIComponent(fullName)}`}
@@ -250,56 +250,56 @@ function Home() {
         </header>
 
         {/* Notifications Dropdown */}
-{showNotifications && (
-  <div className="fixed inset-0 z-50" onClick={() => setShowNotifications(false)}>
-    <div
-      className="absolute right-6 top-24 w-96 bg-white/95 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/30 overflow-hidden"
-      onClick={e => e.stopPropagation()}
-    >
-      <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white flex items-center justify-between">
-        <h3 className="text-xl font-bold">Recent Notifications</h3>
-        <button
-          onClick={() => setShowNotifications(false)}
-          className="p-2 hover:bg-white/20 rounded-xl transition"
-        >
-          <X className="w-6 h-6" />
-        </button>
-      </div>
-      <div className="max-h-96 overflow-y-auto p-4 space-y-3">
-        {notifications.length > 0 ? (
-          notifications.map((n, i) => (
+        {showNotifications && (
+          <div className="fixed inset-0 z-50" onClick={() => setShowNotifications(false)}>
             <div
-              key={i}
-              className="group relative flex gap-4 p-5 rounded-2xl hover:bg-gray-50 border border-gray-100 transition-all duration-200"
+              className="absolute right-4 sm:right-6 top-24 w-full sm:w-96 max-w-sm sm:max-w-md bg-white/95 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/30 overflow-hidden mx-2 sm:mx-0"
+              onClick={e => e.stopPropagation()}
             >
-              <MessageSquare className="w-6 h-6 text-indigo-600 mt-1 flex-shrink-0" />
-              <p className="text-sm text-gray-700 leading-relaxed flex-1 pr-8">{n.text}</p>
+              <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white flex items-center justify-between">
+                <h3 className="text-xl font-bold">Recent Notifications</h3>
+                <button
+                  onClick={() => setShowNotifications(false)}
+                  className="p-2 hover:bg-white/20 rounded-xl transition"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              <div className="max-h-96 overflow-y-auto p-4 space-y-3">
+                {notifications.length > 0 ? (
+                  notifications.map((n, i) => (
+                    <div
+                      key={i}
+                      className="group relative flex gap-4 p-5 rounded-2xl hover:bg-gray-50 border border-gray-100 transition-all duration-200"
+                    >
+                      <MessageSquare className="w-6 h-6 text-indigo-600 mt-1 flex-shrink-0" />
+                      <p className="text-sm text-gray-700 leading-relaxed flex-1 pr-8">{n.text}</p>
 
-              {/* Close Button per Notification */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setNotifications(prev => prev.filter((_, index) => index !== i));
-                }}
-                className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 p-1.5 hover:bg-gray-200 rounded-lg transition-all duration-200"
-                title="Dismiss this notification"
-              >
-                <X className="w-4 h-4 text-gray-500 hover:text-gray-700" />
-              </button>
+                      {/* Close Button per Notification */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setNotifications(prev => prev.filter((_, index) => index !== i));
+                        }}
+                        className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 p-1.5 hover:bg-gray-200 rounded-lg transition-all duration-200"
+                        title="Dismiss this notification"
+                      >
+                        <X className="w-4 h-4 text-gray-500 hover:text-gray-700" />
+                      </button>
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-center py-16 text-gray-500 font-medium">No new notifications</p>
+                )}
+              </div>
             </div>
-          ))
-        ) : (
-          <p className="text-center py-16 text-gray-500 font-medium">No new notifications</p>
+          </div>
         )}
-      </div>
-    </div>
-  </div>
-)}
 
         {/* Main Dashboard */}
-        <main className="max-w-7xl mx-auto px-6 py-12 space-y-12">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-8 sm:space-y-12">
           {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <StatCard icon={FileText} label="Active Cases" value={totals?.activeCases || 0} color="bg-gradient-to-br from-blue-500 to-cyan-600" trend={12} />
             <StatCard icon={CheckCircle} label="Resolved" value={solvedCount} color="bg-gradient-to-br from-emerald-500 to-teal-600" trend={28} />
             <StatCard icon={Clock} label="Pending" value={openCount} color="bg-gradient-to-br from-amber-500 to-orange-600" trend={-8} />
@@ -307,15 +307,15 @@ function Home() {
           </div>
 
           {/* Chart + CAs */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <div className="lg:col-span-2 bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 p-8">
-              <div className="flex items-center justify-between mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-10">
+            <div className="lg:col-span-2 bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 p-4 sm:p-8">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900">Service Demand Trends</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Service Demand Trends</h2>
                   <p className="text-gray-500 mt-2">Most requested compliance services</p>
                 </div>
               </div>
-              <ResponsiveContainer width="100%" height={340}>
+              <ResponsiveContainer width="100%" height={300} className="sm:h-340">
                 <LineChart data={chartData}>
                   <CartesianGrid strokeDasharray="4 4" stroke="#f0f0f0" />
                   <XAxis dataKey="name" stroke="#666" fontWeight="600" />
@@ -326,8 +326,8 @@ function Home() {
               </ResponsiveContainer>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+            <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 p-4 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
                 <Users className="w-8 h-8 text-indigo-600" />
                 Assigned Advisors
               </h2>
@@ -336,7 +336,7 @@ function Home() {
                   {assignedCA.map((caId, i) => {
                     const admin = admins.find(a => a._id === caId);
                     return (
-                      <div key={i} className="flex items-center justify-between p-5 rounded-2xl bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100">
+                      <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-2xl bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 gap-4">
                         <div className="flex items-center gap-4">
                           <div className="relative">
                             <img
@@ -351,7 +351,7 @@ function Home() {
                             <p className="text-sm text-gray-600">{admin?.bio || "Your compliance expert"}</p>
                           </div>
                         </div>
-                        <span className="px-5 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold rounded-full text-sm">
+                        <span className="px-5 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold rounded-full text-sm self-start sm:self-center">
                           Active
                         </span>
                       </div>
@@ -369,13 +369,13 @@ function Home() {
 
           {/* Active Cases */}
           <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/30 overflow-hidden">
-            <div className="p-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-              <div className="flex items-center justify-between">
+            <div className="p-4 sm:p-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-3xl font-bold">Active Cases</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold">Active Cases</h2>
                   <p className="mt-2 opacity-90">Real-time tracking of all your queries</p>
                 </div>
-                <Link to="/query" className="px-8 py-4 bg-white text-indigo-600 font-bold rounded-2xl hover:bg-gray-100 transition shadow-lg">
+                <Link to="/query" className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-indigo-600 font-bold rounded-2xl hover:bg-gray-100 transition shadow-lg w-full sm:w-auto text-center">
                   + Add New Case
                 </Link>
               </div>
@@ -383,51 +383,51 @@ function Home() {
 
             <div className="divide-y divide-gray-100">
               {problems?.length > 0 ? problems.map((item, i) => (
-                <div key={i} className="p-8 hover:bg-gray-50/70 transition">
-                  <div className="flex items-start justify-between gap-8">
-                    <div className="flex-1 space-y-5">
+                <div key={i} className="p-4 sm:p-8 hover:bg-gray-50/70 transition">
+                  <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 lg:gap-8">
+                    <div className="flex-1 space-y-4 sm:space-y-5">
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">{item.title || "Untitled Query"}</h3>
-                        <p className="mt-2 text-gray-600 text-lg">{item.description || "No description"}</p>
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{item.title || "Untitled Query"}</h3>
+                        <p className="mt-2 text-gray-600 text-base sm:text-lg">{item.description || "No description"}</p>
                       </div>
 
-                      <div className="flex flex-wrap gap-4">
+                      <div className="flex flex-wrap gap-3 sm:gap-4">
                         {item.assignedAdmin && (
-                          <span className="inline-flex items-center gap-3 px-5 py-3 bg-indigo-100 text-indigo-700 rounded-2xl font-semibold">
-                            <User className="w-5 h-5" />
+                          <span className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-3 bg-indigo-100 text-indigo-700 rounded-2xl font-semibold text-sm sm:text-base">
+                            <User className="w-4 h-4 sm:w-5 sm:h-5" />
                             {admins.find(a => a._id === item.assignedAdmin)?.name || "CA"}
                           </span>
                         )}
                         {item.adminMessage && (
-                          <span className="inline-flex items-center gap-3 px-5 py-3 bg-purple-100 text-purple-700 rounded-2xl font-semibold">
-                            <MessageSquare className="w-5 h-5" />
+                          <span className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-3 bg-purple-100 text-purple-700 rounded-2xl font-semibold text-sm sm:text-base">
+                            <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
                             {item.adminMessage}
                           </span>
                         )}
                         {item.meetupDate && (
-                          <span className="inline-flex items-center gap-3 px-5 py-3 bg-emerald-100 text-emerald-700 rounded-2xl font-semibold">
-                            <Calendar className="w-5 h-5" />
+                          <span className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-3 bg-emerald-100 text-emerald-700 rounded-2xl font-semibold text-sm sm:text-base">
+                            <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
                             {new Date(item.meetupDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
                           </span>
                         )}
                       </div>
 
                       {item.attachments?.length > 0 && (
-                        <div className="flex flex-wrap gap-4">
+                        <div className="flex flex-wrap gap-3 sm:gap-4">
                           {item.attachments.map((f, fi) => (
                             <a key={fi} href={`https://adl-api-ten.vercel.app${f.url}`} target="_blank" rel="noreferrer"
-                              className="inline-flex items-center gap-3 px-5 py-3 bg-blue-100 text-blue-700 rounded-2xl font-semibold hover:bg-blue-200 transition">
-                              <Download className="w-5 h-5" /> {f.name}
+                              className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-3 bg-blue-100 text-blue-700 rounded-2xl font-semibold text-sm sm:text-base hover:bg-blue-200 transition">
+                              <Download className="w-4 h-4 sm:w-5 sm:h-5" /> {f.name}
                             </a>
                           ))}
                         </div>
                       )}
 
                       {item.status === "closed" && (
-                        <div className="flex items-center gap-6 pt-4">
-                          <div className="flex items-center gap-4">
-                            <span className="font-medium text-gray-700">Rate your experience:</span>
-                              <select
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-4">
+                          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
+                            <span className="font-medium text-gray-700 text-sm sm:text-base">Rate your experience:</span>
+                            <select
                               defaultValue={item.rating || ""}
                               onChange={async (e) => {
                                 const token = localStorage.getItem("token");
@@ -442,7 +442,7 @@ function Home() {
                                   loadDashboard(token);
                                 }
                               }}
-                              className="px-6 py-3 border-2 border-gray-300 rounded-2xl focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 font-semibold"
+                              className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 border-2 border-gray-300 rounded-2xl focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 font-semibold text-sm sm:text-base"
                             >
                               <option value="">Select Rating</option>
                               {[1,2,3,4,5].map(n => (
@@ -463,15 +463,15 @@ function Home() {
                                 loadDashboard(token);
                               }
                             }}
-                            className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold rounded-2xl hover:shadow-xl transition"
+                            className="w-full sm:w-auto flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold rounded-2xl hover:shadow-xl transition text-sm sm:text-base"
                           >
-                            <RefreshCw className="w-5 h-5" /> Reopen Case
+                            <RefreshCw className="w-4 h-4 sm:w-5 sm:h-5" /> Reopen Case
                           </button>
                         </div>
                       )}
                     </div>
 
-                    <div className={`px-8 py-4 rounded-full text-lg font-bold shadow-lg ${
+                    <div className={`px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold shadow-lg self-start lg:self-end mt-4 lg:mt-0 ${
                       item.status === "closed" ? "bg-emerald-500 text-white" :
                       item.status === "in-progress" ? "bg-amber-500 text-white" :
                       "bg-gray-200 text-gray-700"
@@ -481,10 +481,10 @@ function Home() {
                   </div>
                 </div>
               )) : (
-                <div className="text-center py-32">
-                  <FileText className="w-32 h-32 text-gray-300 mx-auto mb-6" />
-                  <p className="text-2xl font-medium text-gray-500">No active cases</p>
-                  <Link to="/query" className="mt-8 inline-block px-10 py-5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold text-xl rounded-2xl hover:shadow-2xl transition">
+                <div className="text-center py-20 sm:py-32">
+                  <FileText className="w-24 h-24 sm:w-32 sm:h-32 text-gray-300 mx-auto mb-6" />
+                  <p className="text-xl sm:text-2xl font-medium text-gray-500">No active cases</p>
+                  <Link to="/query" className="mt-6 sm:mt-8 inline-block px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold text-lg sm:text-xl rounded-2xl hover:shadow-2xl transition">
                     Start Your First Query
                   </Link>
                 </div>
