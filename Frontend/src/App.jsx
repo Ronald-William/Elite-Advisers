@@ -12,6 +12,7 @@ import Home from './Pages/Home.jsx';
 import EditProfile from './Pages/EditProfile.jsx';
 import CreateQuery from './Pages/CreateQuery.jsx';
 import Library from './Pages/Library.jsx';
+import Consultancy from './Pages/Consultancy.jsx'
 
 // ⭐ Import Admin Pages
 import AdminLogin from './Pages/AdminLogin.jsx';
@@ -29,6 +30,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path="/taxation" element={<Taxation />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/consultancy" element={<Consultancy/>}/>
 
         <Route path="/accounting" element={<Accounting />} />
         <Route path="/auditing" element={<Auditing />} />
@@ -40,7 +42,7 @@ function App() {
         <Route path='/query' element={<CreateQuery />} />
         <Route path='/library' element={<Library />} />
 
-        {/* ⭐ Admin Routes */}
+        {/* Admin Routes */}
         <Route path='/admin-login' element={<AdminLogin />} />
         <Route path='/admin-dashboard' element={<AdminDashboard />} />
 

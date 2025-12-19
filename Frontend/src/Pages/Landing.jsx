@@ -21,18 +21,21 @@ export default function Landing() {
         },
         {
             icon: <Calculator className="w-12 h-12" />,
+            link: "/consultancy",
             title: "General Consultancy",
             description: "Expert advisory services to support strategic decision-making, business planning, compliance, and operational guidance.",
             color: "from-[#1a4573] to-[#0d2440]"
         },
         {
             icon: <Award className="w-12 h-12" />,
+            link: "/accounting",
             title: "Accounting & Bookkeeping",
             description: "Accurate bookkeeping, payroll management, and financial statement preparation to support informed decision-making.",
             color: "from-[#123359] to-[#1a4573]"
         },
         {
             icon: <Users className="w-12 h-12" />,
+            link: "/auditing",
             title: "Audit & Assurance",
             description: "Independent audits and financial verification services to ensure transparency, compliance, and operational integrity.",
             color: "from-[#1a4573] to-[#0d2440]"

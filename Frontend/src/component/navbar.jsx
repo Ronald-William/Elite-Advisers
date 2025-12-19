@@ -40,13 +40,13 @@ const Navbar = () => {
 
                             {dropdownOpen && (
                                 <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg border p-3 w-60 z-50">
-                                    <a
-                                        href="#general"
+                                    <Link
+                                        to="/consultancy"
                                         onClick={() => setDropdownOpen(false)}
                                         className="block px-3 py-2 text-[#0C2B4E] hover:bg-gray-100 rounded"
                                     >
                                         General Consultancy
-                                    </a>
+                                    </Link>
                                     <Link
 
                                         to="/taxation"
@@ -115,8 +115,8 @@ const Navbar = () => {
 
                             {mobileDropdownOpen && (
                                 <div className="ml-4 mt-2 space-y-2">
-                                    <a href="#general" className="block text-[#0C2B4E] hover:text-[#1D546C]">General Consultancy</a>
-                                    <a href="#taxation" className="block text-[#0C2B4E] hover:text-[#1D546C]">Taxation & Return Filing</a>
+                                    <Link to="/consultancy" className="block text-[#0C2B4E] hover:text-[#1D546C]">General Consultancy</Link>
+                                    <Link href="/taxation" className="block text-[#0C2B4E] hover:text-[#1D546C]">Taxation & Return Filing</Link>
                                     <Link to="/accounting" className="block text-[#0C2B4E] hover:text-[#1D546C]">Accounting & Bookkeeping</Link>
                                     <Link to="/auditing" className="block text-[#0C2B4E] hover:text-[#1D546C]">Audit & Assurance</Link>
                                 </div>
